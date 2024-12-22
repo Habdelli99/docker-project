@@ -1,0 +1,126 @@
+# Git Workflow for Project Development
+
+## Initial Setup
+```bash
+# Initialize the repository
+git init
+
+# Add all files to staging
+git add .
+
+# Initial commit
+git commit -m "Initial commit: Project structure and base setup"
+```
+
+## Development Workflow
+
+### 1. Backend Development
+```bash
+# Create backend branch
+git checkout -b feature/backend-setup
+
+# Add backend dependencies
+git add server/package.json server/package-lock.json
+git commit -m "Add backend dependencies"
+
+# Add MongoDB models
+git add server/models/*
+git commit -m "Add MongoDB models for Client and Project"
+
+# Add GraphQL schema
+git add server/schema/*
+git commit -m "Implement GraphQL schema with queries and mutations"
+
+# Add server configuration
+git add server/config/* server/index.js
+git commit -m "Add server configuration and entry point"
+
+# Merge backend changes
+git checkout main
+git merge feature/backend-setup
+```
+
+### 2. Frontend Development
+```bash
+# Create frontend branch
+git checkout -b feature/frontend-setup
+
+# Add frontend dependencies
+git add client/package.json client/package-lock.json
+git commit -m "Add frontend dependencies"
+
+# Add React components
+git add client/src/components/*
+git commit -m "Add React components for UI"
+
+# Add GraphQL queries and mutations
+git add client/src/queries/* client/src/mutations/*
+git commit -m "Implement GraphQL queries and mutations for frontend"
+
+# Add styling and assets
+git add client/src/index.css
+git commit -m "Add styling and UI improvements"
+
+# Merge frontend changes
+git checkout main
+git merge feature/frontend-setup
+```
+
+### 3. Docker Configuration
+```bash
+# Create docker branch
+git checkout -b feature/docker-setup
+
+# Add Dockerfiles
+git add client/Dockerfile server/Dockerfile
+git commit -m "Add Dockerfiles for client and server"
+
+# Add Docker Compose configuration
+git add docker-compose.yml
+git commit -m "Add Docker Compose configuration"
+
+# Merge docker changes
+git checkout main
+git merge feature/docker-setup
+```
+
+### 4. Documentation and Final Updates
+```bash
+# Create documentation branch
+git checkout -b feature/documentation
+
+# Update README
+git add README.md
+git commit -m "Update README with comprehensive documentation"
+
+# Add Home component
+git add client/src/components/Home.js
+git commit -m "Add Home component with project information"
+
+# Add workflow documentation
+git add gitworkflow.txt
+git commit -m "Add Git workflow documentation"
+
+# Merge documentation changes
+git checkout main
+git merge feature/documentation
+```
+
+## Pushing to Remote Repository
+```bash
+# Add remote repository
+git remote add origin <repository-url>
+
+# Push all changes
+git push -u origin main
+```
+
+## Best Practices Followed
+1. Used feature branches for different aspects of development
+2. Meaningful commit messages describing changes
+3. Regular commits for trackable progress
+4. Proper documentation of changes
+5. Clean merge workflow
+
+## Note
+This workflow demonstrates the development process and commits made during the project implementation. Each commit represents a significant milestone or feature addition in the development process.
