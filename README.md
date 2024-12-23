@@ -1,6 +1,6 @@
 # Project Management System with MERN Stack and GraphQL
 
-**Developer**: Hamza Abdelli  
+**Developer**: Hamza Abdelli / BOUDIAF Yanis
 **Class**: TD47  
 **Course**: ESIEA 4A-IASD 2024-2025 
 **Project**: Microservices Application with Docker
